@@ -1,10 +1,14 @@
 package com.example.prog3td2.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import lombok.*;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 @Entity
+@Table(name = "sponsor")
 @Data
 @EqualsAndHashCode
 @Builder
@@ -12,6 +16,7 @@ import lombok.*;
 @AllArgsConstructor
 public class Sponsor {
     @Id
-    Integer id;
-    String Name;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    int id;
+    String name;
 }

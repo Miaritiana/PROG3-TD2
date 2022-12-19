@@ -1,10 +1,14 @@
 package com.example.prog3td2.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import lombok.*;
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 @Entity
+@Table(name = "player")
 @Data
 @EqualsAndHashCode
 @Builder
@@ -12,7 +16,8 @@ import lombok.*;
 @AllArgsConstructor
 public class Player {
     @Id
-    Long id;
-    String Name;
-    int Number;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    long id;
+    String name;
+    int number;
 }
