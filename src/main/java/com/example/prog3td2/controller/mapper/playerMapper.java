@@ -21,4 +21,12 @@ public class playerMapper {
                 .number(rest.getNumber())
                 .build();
     }
+
+    public Player toDomain(playerResponse rest) {
+        return Player.builder()
+                .id(rest.getId())
+                .name(rest.getName())
+                .number(rest.getNumber())
+                .build();
+    }
 }

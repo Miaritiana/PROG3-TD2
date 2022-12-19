@@ -23,5 +23,14 @@ public class teamMapper {
                 .sponsors(rest.getSponsors())
                 .build();
     }
+
+    public Team toDomain(teamResponse rest) {
+        return Team.builder()
+                .id(rest.getId())
+                .name(rest.getName())
+                .players(rest.getPlayers())
+                .sponsors(rest.getSponsors())
+                .build();
+    }
 }
 

@@ -28,4 +28,14 @@ public class playAgainstMapper {
                 .opponents(rest.getOpponents())
                 .build();
     }
+
+    public PlayAgainst toDomain(playAgainstResponse rest) {
+        return PlayAgainst.builder()
+                .id(rest.getId())
+                .stadium(rest.getStadium())
+                .datetime(rest.getDatetime())
+                .host(rest.getHost())
+                .opponents(rest.getOpponents())
+                .build();
+    }
 }
