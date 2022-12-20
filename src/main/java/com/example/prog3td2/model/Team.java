@@ -18,8 +18,9 @@ public class Team {
     int id;
     String name;
     @OneToMany
+            @JoinColumn(name = "players")
     List<Player> players;
-    @JoinTable(name = "haveSponsor")
+    @JoinTable(name = "sponsor")
     @ManyToMany(mappedBy = "sponsor",targetEntity = Sponsor.class)
     List<Sponsor> sponsors;
 }
