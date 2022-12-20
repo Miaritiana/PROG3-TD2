@@ -8,6 +8,7 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "play_against")
@@ -22,8 +23,8 @@ public class PlayAgainst {
     int id;
     String stadium;
     Date datetime;
-    @OneToOne
-    Team host;
-    @OneToOne
-    Team opponents;
+    @ManyToOne
+    Team home;
+    @OneToMany
+    List<Team> guest;
 }
