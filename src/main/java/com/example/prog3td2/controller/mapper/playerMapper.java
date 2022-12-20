@@ -11,7 +11,6 @@ public class playerMapper {
         return playerResponse.builder()
                 .id(domain.getId())
                 .name(domain.getName())
-                .number(domain.getNumber())
                 .build();
     }
 
@@ -26,7 +25,6 @@ public class playerMapper {
         return Player.builder()
                 .id(rest.getId())
                 .name(rest.getName())
-                .number(rest.getNumber())
                 .build();
     }
 }

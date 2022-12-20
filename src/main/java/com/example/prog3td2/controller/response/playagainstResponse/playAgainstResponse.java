@@ -7,15 +7,15 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
+import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Builder
 public class playAgainstResponse {
-    int id;
-    String stadium;
-    Date datetime;
-    Team host;
-    Team opponents;
+    private int id;
+    private Date datetime;
+    private Team home;
+    private List<Team> guest;
 }

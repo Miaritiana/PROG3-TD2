@@ -12,5 +12,4 @@ import lombok.NoArgsConstructor;
 public class playerResponse {
     long id;
     String name;
-    int number;
 }

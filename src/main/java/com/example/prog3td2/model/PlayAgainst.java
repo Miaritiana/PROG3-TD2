@@ -24,7 +24,9 @@ public class PlayAgainst {
     String stadium;
     Date datetime;
     @ManyToOne
+            @JoinColumn(name = "home")
     Team home;
     @OneToMany
+            @JoinColumn(name = "guest")
     List<Team> guest;
 }

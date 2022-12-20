@@ -15,6 +15,6 @@ import java.util.Date;
 public class createPlayAgainstResponse {
     String stadium;
     Date datetime;
-    Team host;
-    Team opponents;
+    Team home;
+    Team guest;
 }
