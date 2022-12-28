@@ -1,14 +1,12 @@
 package com.example.prog3td2.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.List;
 
 @Entity
+@Table(name = "team")
 @Data
 @EqualsAndHashCode
 @Builder
@@ -16,13 +14,13 @@ import java.util.List;
 @AllArgsConstructor
 public class Team {
     @Id
-    Integer id;
-    String Name;
-    @OneToMany(
-            targetEntity = Player.class,
-            mappedBy = "player"
-    )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    int id;
+    String name;
+    @OneToMany
+            @JoinColumn(name = "players")
     List<Player> players;
+    @JoinTable(name = "sponsor")
     @ManyToMany(mappedBy = "sponsor",targetEntity = Sponsor.class)
     List<Sponsor> sponsors;
 }
